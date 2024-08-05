@@ -1,0 +1,1446 @@
+[gd_scene load_steps=38 format=3 uid="uid://bdypoyw3fuftx"]
+
+[ext_resource type="Script" path="res://Scenes/UI/interface.gd" id="1_ssmhb"]
+[ext_resource type="Texture2D" uid="uid://chau3qxnmkks2" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/DialogBoxFaceset.png" id="2_suw1y"]
+[ext_resource type="FontFile" uid="uid://bwyukjrsshdjq" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="3_13jw1"]
+[ext_resource type="PackedScene" uid="uid://vih4c32w44ws" path="res://Scenes/UI/blue_samurai.tscn" id="3_b7n3c"]
+[ext_resource type="Texture2D" uid="uid://0enn8d2ueui" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Faceset.png" id="3_m7wq1"]
+[ext_resource type="Texture2D" uid="uid://bv4w6qswru8wj" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Villager/Faceset.png" id="3_ohrwt"]
+[ext_resource type="Texture2D" uid="uid://b4aapa1808ci0" path="res://Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="4_01ep1"]
+[ext_resource type="Texture2D" uid="uid://drm20foqjrber" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Slime4/Faceset.png" id="5_0p2r1"]
+[ext_resource type="PackedScene" uid="uid://pnx4ji377wyv" path="res://Scenes/UI/fighter_red.tscn" id="5_fqupo"]
+[ext_resource type="Texture2D" uid="uid://cqsd6mjae2maw" path="res://Ninja Adventure - Asset Pack/Ui/MenuBackground.png" id="5_mkp0q"]
+[ext_resource type="PackedScene" uid="uid://bu75ekhrbi6c6" path="res://Scenes/Objects/coin.tscn" id="5_uev24"]
+[ext_resource type="PackedScene" uid="uid://cwyvgkt2atnv7" path="res://Scenes/UI/ninja_red_2.tscn" id="6_bohsj"]
+[ext_resource type="Texture2D" uid="uid://dpmulwwd0iyaw" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Cyclope2/Faceset.png" id="6_fpc12"]
+[ext_resource type="Texture2D" uid="uid://cux5rq17iaokq" path="res://Ninja Adventure - Asset Pack/Ui/Arrow.png" id="7_oo6fk"]
+[ext_resource type="Texture2D" uid="uid://dl4xxlfbtqgon" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Snake2/Faceset.png" id="7_tfm16"]
+[ext_resource type="Texture2D" uid="uid://t8okw2kqoti2" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Reptile2/Faceset.png" id="8_ye6o6"]
+[ext_resource type="Texture2D" uid="uid://bftls1dxsco17" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Bamboo/Faceset.png" id="9_4q7u1"]
+[ext_resource type="Texture2D" uid="uid://b6uxg6vslqlqb" path="res://Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Faceset.png" id="10_by0kl"]
+[ext_resource type="Texture2D" uid="uid://b4etnlriry1je" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/YesButton.png" id="19_fgp8t"]
+[ext_resource type="Texture2D" uid="uid://b7thwrvxxayoj" path="res://Ninja Adventure - Asset Pack/Ui/Theme/nine_path_2.png" id="20_cx73a"]
+[ext_resource type="Texture2D" uid="uid://bga6xdch212qr" path="res://Ninja Adventure - Asset Pack/Ui/LifeReceptacle/heart.png" id="20_s5fsw"]
+[ext_resource type="AudioStream" uid="uid://b6p2aca5f5iin" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Sword.wav" id="21_jfmf8"]
+[ext_resource type="PackedScene" uid="uid://dkimrry3guee3" path="res://Scenes/UI/fast_forward.tscn" id="21_skswn"]
+[ext_resource type="AudioStream" uid="uid://dlv1d3jef1db3" path="res://Ninja Adventure - Asset Pack/Sounds/Menu/Cancel.wav" id="22_qg17v"]
+[ext_resource type="Texture2D" uid="uid://c8dlxailalcah" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/DialogueBoxSimple.png" id="23_bcqh3"]
+[ext_resource type="Theme" uid="uid://dtwklymtnlmjw" path="res://Scenes/UI/game_theme.tres" id="23_kg02x"]
+[ext_resource type="AudioStream" uid="uid://ct8wcmkcc0e6" path="res://Ninja Adventure - Asset Pack/Sounds/Game/GameOver2.wav" id="23_rnq40"]
+[ext_resource type="Texture2D" uid="uid://btsji0p2vwqjv" path="res://Ninja Adventure - Asset Pack/Ui/Theme/nine_path_9.png" id="24_h1d2l"]
+[ext_resource type="Texture2D" uid="uid://bqq6ujeq5qkdp" path="res://Ninja Adventure - Asset Pack/Ui/Theme/preview.png" id="25_cyiib"]
+[ext_resource type="AudioStream" uid="uid://dajce26psa8sv" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Alert.wav" id="26_l1ycf"]
+[ext_resource type="AudioStream" uid="uid://ciep5mks4ycxk" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Slapstick.mp3" id="27_vgkuy"]
+[ext_resource type="AudioStream" uid="uid://wtj5hsd3s7sa" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Ominous-in-8-Bit.mp3" id="28_7t0yn"]
+[ext_resource type="AudioStream" uid="uid://b8ox7x2ce4pye" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Success3.wav" id="30_55y32"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_2rknh"]
+keycode = 70
+physical_keycode = 70
+key_label = 70
+
+[sub_resource type="Shortcut" id="Shortcut_s8826"]
+events = [SubResource("InputEventKey_2rknh")]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j73up"]
+font = ExtResource("3_13jw1")
+font_size = 9
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mlh78"]
+line_spacing = -50.0
+font = ExtResource("3_13jw1")
+font_size = 170
+font_color = Color(0.840569, 0.528411, 0.144981, 1)
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ssmhb")
+
+[node name="Ingame" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyDesc" type="Control" parent="Ingame"]
+layout_mode = 1
+anchor_left = 0.118
+anchor_top = 0.77
+anchor_right = 0.788
+anchor_bottom = 0.971
+offset_left = 0.472
+offset_top = 0.0400085
+offset_right = 0.223999
+offset_bottom = -0.208008
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Ingame/EnemyDesc"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueBox" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(379.304, 57)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("2_suw1y")
+
+[node name="Villager" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="VillagerFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+position = Vector2(-125, 4)
+texture = ExtResource("3_ohrwt")
+
+[node name="VillagerWelcome" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -93.8182
+offset_top = -11.0
+offset_right = 147.182
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.421776, 0.520682, 0.80481, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Hey    you!   Beasts   have   started   invading   our
+town...   you   need   to   help   defend   it . . . !"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VillagerTipOne" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+unique_name_in_owner = true
+visible = false
+offset_left = -93.6364
+offset_top = -3.63634
+offset_right = 100.364
+offset_bottom = 8.36366
+theme_override_colors/font_color = Color(0.423529, 0.521569, 0.803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Start   by   placing   a   samurai   over   here !"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VillagerTipTwo" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+unique_name_in_owner = true
+visible = false
+offset_left = -93.6364
+offset_top = -3.63634
+offset_right = 100.364
+offset_bottom = 8.36366
+theme_override_colors/font_color = Color(0.423529, 0.521569, 0.803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Now   press   the   arrow   to   start    when   ready."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VillagerTipThree" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+unique_name_in_owner = true
+visible = false
+offset_left = -93.6364
+offset_top = -10.9091
+offset_right = 113.364
+offset_bottom = 16.0909
+theme_override_colors/font_color = Color(0.423529, 0.521569, 0.803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Beasts   differ   a   lot   from   eachother ,   try
+using   different   towers   to   deal   with   them."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VillagerTipFour" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+unique_name_in_owner = true
+visible = false
+offset_left = -93.6364
+offset_top = -10.9091
+offset_right = 113.364
+offset_bottom = 16.0909
+theme_override_colors/font_color = Color(0.423529, 0.521569, 0.803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Keep   in   mind   all   of   the   paths   that   the   beasts
+could   come   from   and   plan   accordingly . . ."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="VillagerTipFive" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+unique_name_in_owner = true
+visible = false
+offset_left = -93.6364
+offset_top = -3.63632
+offset_right = 107.364
+offset_bottom = 8.36368
+theme_override_colors/font_color = Color(0.423529, 0.521569, 0.803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Oh   no !   They're   attacking   from   the   forest   too!"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Bimo" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Villager"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.423529, 0.521569, 0.803922, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "bimo"
+horizontal_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="SlimeFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Slime"]
+position = Vector2(-125, 4)
+texture = ExtResource("3_m7wq1")
+
+[node name="SlimeStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Slime"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.0
+offset_top = -11.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Health :     10
+Speed :     12
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="SlimeDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Slime"]
+unique_name_in_owner = true
+visible = false
+offset_left = -88.6364
+offset_top = -3.18181
+offset_right = 64.3636
+offset_bottom = 8.81819
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "It's   all   wobbly...   looks   edible."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Slime" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Slime"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.553131, 0.561239, 0.0325252, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "slime"
+horizontal_alignment = 1
+
+[node name="MaturedSlime" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="MaturedSlimeFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/MaturedSlime"]
+position = Vector2(-125, 4)
+texture = ExtResource("5_0p2r1")
+
+[node name="MaturedSlimeStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/MaturedSlime"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.0
+offset_top = -11.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Health :     20
+Speed :     14
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="MaturedSlimeDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/MaturedSlime"]
+unique_name_in_owner = true
+visible = false
+offset_left = -88.6364
+offset_top = -3.18181
+offset_right = 64.3636
+offset_bottom = 8.81819
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "This   one   looks   more   angry..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="MaturedSlime" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/MaturedSlime"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.553131, 0.561239, 0.0325252, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "mature slime"
+horizontal_alignment = 1
+
+[node name="Cyclope" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="CyclopeFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Cyclope"]
+position = Vector2(-125, 4)
+texture = ExtResource("6_fpc12")
+
+[node name="CyclopeStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Cyclope"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.0
+offset_top = -11.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Health :     20
+Speed :     8
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="CyclopeDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Cyclope"]
+unique_name_in_owner = true
+visible = false
+offset_left = -88.6364
+offset_top = -3.18181
+offset_right = 64.3636
+offset_bottom = 8.81819
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Their   queen   is   really   dangerous..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Cyclope" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Cyclope"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.553131, 0.561239, 0.0325252, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "cyclope"
+horizontal_alignment = 1
+
+[node name="YoungSnake" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="YoungSnakeFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/YoungSnake"]
+position = Vector2(-125, 4)
+texture = ExtResource("7_tfm16")
+
+[node name="YoungSnakeStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/YoungSnake"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.0
+offset_top = -11.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Health :     7
+Speed :     30
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="YoungSnakeDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/YoungSnake"]
+unique_name_in_owner = true
+visible = false
+offset_left = -88.6364
+offset_top = -3.18181
+offset_right = 64.3636
+offset_bottom = 8.81819
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Hsssss   (They're   fast)."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="YoungSnake" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/YoungSnake"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.553131, 0.561239, 0.0325252, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "young snake"
+horizontal_alignment = 1
+
+[node name="Reptile" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="ReptileFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Reptile"]
+position = Vector2(-125, 4)
+texture = ExtResource("8_ye6o6")
+
+[node name="ReptileStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Reptile"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.0
+offset_top = -11.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Health :     35
+Speed :     10
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="ReptileDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Reptile"]
+unique_name_in_owner = true
+visible = false
+offset_left = -88.6364
+offset_top = -3.18181
+offset_right = 64.3636
+offset_bottom = 8.81819
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Looks   mutated...   and    dangerous."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Reptile" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Reptile"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.553131, 0.561239, 0.0325252, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "reptile
+"
+horizontal_alignment = 1
+
+[node name="Bamboo" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="BambooFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Bamboo"]
+position = Vector2(-125, 4)
+texture = ExtResource("9_4q7u1")
+
+[node name="BambooStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Bamboo"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.0
+offset_top = -11.0
+offset_right = -34.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Health :     14
+Speed :     11
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="BambooDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Bamboo"]
+unique_name_in_owner = true
+visible = false
+offset_left = -88.6364
+offset_top = -3.18181
+offset_right = 64.3636
+offset_bottom = 8.81819
+theme_override_colors/font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "Is   that   walking   living   bamboo   ??"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Bamboo" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/Bamboo"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0.553131, 0.561239, 0.0325252, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "bamboo
+
+"
+horizontal_alignment = 1
+
+[node name="CyclopeQueen" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
+unique_name_in_owner = true
+visible = false
+
+[node name="CyclopeQueenFaceset" type="Sprite2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/CyclopeQueen"]
+position = Vector2(-125, 4)
+texture = ExtResource("10_by0kl")
+
+[node name="CyclopeQueenStats" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/CyclopeQueen"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_right = 0.23
+anchor_bottom = 0.161
+offset_left = -89.7727
+offset_top = -11.0
+offset_right = 32.2273
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 18
+text = "Health :     500"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="CyclopeQueenDesc" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/CyclopeQueen"]
+unique_name_in_owner = true
+visible = false
+offset_left = -90.4545
+offset_top = -10.9091
+offset_right = 133.545
+offset_bottom = 13.0909
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 18
+text = "THE   CYCLOPE   QUEEN"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="CyclopeQueen" type="Label" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox/CyclopeQueen"]
+offset_left = -145.0
+offset_top = -31.0
+offset_right = -81.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 9
+text = "queen
+
+"
+horizontal_alignment = 1
+
+[node name="SideBar" type="Control" parent="Ingame"]
+layout_mode = 1
+anchor_left = 0.92
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.160034
+offset_bottom = 0.160004
+
+[node name="MarginContainer" type="MarginContainer" parent="Ingame/SideBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Ingame/SideBar/MarginContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.877624, 0.429631, 0.0354591, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.945
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.996078, 0.564706, 0.278431, 1)
+
+[node name="BlueSamuraiDetails" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.126
+anchor_right = 0.965
+anchor_bottom = 0.249
+offset_left = 0.0510063
+offset_top = 1.352
+offset_right = -0.596313
+offset_bottom = -0.352005
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiDetails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.555892, 0.688135, 0.993613, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "               100"
+
+[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiDetails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "DMG:   5"
+
+[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiDetails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "CD:   2.0s"
+
+[node name="GoldCoin" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+position = Vector2(20.552, 94.816)
+scale = Vector2(2.28571, 2.28571)
+texture = ExtResource("4_01ep1")
+
+[node name="BlueSamuraiButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.005
+anchor_right = 0.835
+anchor_bottom = 0.11
+offset_top = 1.0
+offset_right = 7.99999
+offset_bottom = 9.00001
+
+[node name="BlueSamurai" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2" instance=ExtResource("3_b7n3c")]
+position = Vector2(41.552, 40.816)
+
+[node name="FighterRedDetails" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.392
+anchor_right = 0.965
+anchor_bottom = 0.515
+offset_left = 0.0510063
+offset_top = 1.352
+offset_right = -0.596313
+offset_bottom = -0.352005
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedDetails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.555892, 0.688135, 0.993613, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "               225"
+
+[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedDetails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "DMG:   6"
+
+[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedDetails"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "CD:   1.0s"
+
+[node name="GoldCoin2" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+position = Vector2(20.552, 267.121)
+scale = Vector2(2.28571, 2.28571)
+texture = ExtResource("4_01ep1")
+
+[node name="FighterRedButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.273
+anchor_right = 0.964
+anchor_bottom = 0.375
+offset_left = -0.471283
+offset_right = 0.42408
+offset_bottom = 8.0
+
+[node name="FighterRed" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2" instance=ExtResource("5_fqupo")]
+position = Vector2(41.552, 214)
+
+[node name="NinjaRed2Details" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.655
+anchor_right = 0.965
+anchor_bottom = 0.778
+offset_left = 0.0510063
+offset_top = 1.35201
+offset_right = -0.596313
+offset_bottom = -0.35202
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.555892, 0.688135, 0.993613, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "               175"
+
+[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "DMG:   7"
+
+[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Details"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 16
+text = "CD:   1.4s"
+
+[node name="GoldCoin3" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+position = Vector2(20.552, 438.121)
+scale = Vector2(2.28571, 2.28571)
+texture = ExtResource("4_01ep1")
+
+[node name="NinjaRed2Button" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.535
+anchor_right = 0.96
+anchor_bottom = 0.65
+offset_left = -0.124162
+offset_right = 0.403687
+offset_bottom = 0.880001
+
+[node name="NinjaRed2" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2" instance=ExtResource("6_bohsj")]
+position = Vector2(41.552, 385)
+
+[node name="Round" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.791
+anchor_right = 0.95
+anchor_bottom = 0.844
+offset_left = -0.124162
+offset_top = -7.16003
+offset_right = -0.35907
+offset_bottom = 0.640015
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 18
+text = "ROUND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundNumber" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.839
+anchor_right = 0.946
+anchor_bottom = 0.878
+offset_left = -0.124162
+offset_top = -7.54401
+offset_right = -0.0291367
+offset_bottom = 0.255981
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 18
+text = "1 /  10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpawnWaveButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.152
+anchor_top = 0.901
+anchor_right = 0.867
+anchor_bottom = 0.991
+offset_left = -0.98545
+offset_top = 58.152
+offset_right = -1.96096
+offset_bottom = 59.832
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -1.5708
+icon = ExtResource("7_oo6fk")
+flat = true
+expand_icon = true
+
+[node name="ColorRect3" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25
+anchor_right = 0.989
+anchor_bottom = 0.261
+offset_right = 0.613437
+offset_bottom = 0.871994
+color = Color(0.878431, 0.431373, 0.0352941, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.514
+anchor_right = 0.989
+anchor_bottom = 0.525
+offset_right = 0.613437
+offset_bottom = 0.871994
+color = Color(0.878431, 0.431373, 0.0352941, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.777
+anchor_right = 0.989
+anchor_bottom = 0.789
+offset_right = 0.613437
+offset_bottom = 0.871994
+color = Color(0.878431, 0.431373, 0.0352941, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.878
+anchor_right = 0.989
+anchor_bottom = 0.89
+offset_right = 0.613437
+offset_bottom = 0.871994
+color = Color(0.878431, 0.431373, 0.0352941, 1)
+
+[node name="DebugButtons" type="Control" parent="Ingame"]
+layout_mode = 1
+anchor_top = 0.2
+anchor_right = 0.14
+anchor_bottom = 0.8
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Ingame/DebugButtons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ingame/DebugButtons/MarginContainer"]
+layout_mode = 2
+
+[node name="LastWaveButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Last Wave
+"
+
+[node name="CyclopeWaveButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Cyclope Wave
+"
+
+[node name="MatureSlimeWaveButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mature Slime Wave
+"
+
+[node name="YoungSnakeWaveButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Young Snake Wave
+"
+
+[node name="ReptileWaveButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reptile Wave"
+
+[node name="BambooWaveButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bamboo Wave"
+
+[node name="DebugLoseGameButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lose Game
+"
+
+[node name="DebugWinGameButton" type="Button" parent="Ingame/DebugButtons/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Win Game
+"
+
+[node name="LivesDisplay" type="MarginContainer" parent="Ingame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.007
+anchor_right = 0.124
+anchor_bottom = 0.096
+offset_right = -0.32
+offset_bottom = -0.176003
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Ingame/LivesDisplay"]
+layout_mode = 2
+
+[node name="Heart" type="Sprite2D" parent="Ingame/LivesDisplay/NinePatchRect"]
+unique_name_in_owner = true
+position = Vector2(29.24, 28.464)
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("20_s5fsw")
+hframes = 5
+frame = 4
+
+[node name="Health" type="Label" parent="Ingame/LivesDisplay/NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.478
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.00800323
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.882353, 0.278431, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 38
+text = "100"
+
+[node name="CoinDisplay" type="MarginContainer" parent="Ingame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.793
+anchor_top = 0.009
+anchor_right = 0.916
+anchor_bottom = 0.09
+offset_left = 0.463989
+offset_top = 0.0559998
+offset_right = 1.54395
+offset_bottom = 2.816
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Ingame/CoinDisplay"]
+layout_mode = 2
+texture = ExtResource("5_mkp0q")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="CoinCount" type="Label" parent="Ingame/CoinDisplay/NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34
+anchor_top = 0.033
+anchor_right = 0.965
+anchor_bottom = 0.948
+offset_left = 0.0600014
+offset_top = 0.052
+offset_bottom = 0.168999
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.461932, 0.555365, 0.754187, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 36
+text = "150"
+vertical_alignment = 1
+
+[node name="Coin" parent="Ingame/CoinDisplay" instance=ExtResource("5_uev24")]
+position = Vector2(25, 29.112)
+scale = Vector2(3.2, 3.2)
+
+[node name="FFButton" type="MarginContainer" parent="Ingame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.828
+anchor_top = 0.887
+anchor_right = 0.907
+anchor_bottom = 0.992
+offset_left = 0.143921
+offset_top = 0.223999
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Ingame/FFButton"]
+layout_mode = 2
+texture = ExtResource("20_cx73a")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="FastForwardButton" type="CheckButton" parent="Ingame/FFButton/NinePatchRect2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.253
+anchor_top = 0.328
+anchor_right = 0.759
+anchor_bottom = 0.703
+offset_left = -0.0110016
+offset_top = 0.00799942
+offset_right = -0.0330048
+offset_bottom = 0.00799942
+shortcut = SubResource("Shortcut_s8826")
+
+[node name="FastForward" parent="Ingame/FFButton/NinePatchRect2" instance=ExtResource("21_skswn")]
+position = Vector2(35, 32)
+scale = Vector2(2.8753, 2.8753)
+
+[node name="Tips" type="MarginContainer" parent="Ingame"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.305
+anchor_right = 0.663
+anchor_bottom = 0.142
+offset_right = 0.111938
+offset_bottom = -0.368004
+
+[node name="DialogueBoxSimple" type="Sprite2D" parent="Ingame/Tips"]
+position = Vector2(206.64, 45)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("23_bcqh3")
+
+[node name="ToolTips" type="Label" parent="Ingame/Tips/DialogueBoxSimple"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -46.0
+offset_right = -58.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRESS   'Esc'   TO   PAUSE/UNPAUSE
+PRESS   'F'   TO   FASTFORWARD"
+label_settings = SubResource("LabelSettings_j73up")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="LoseScreen" type="MarginContainer" parent="Ingame"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Ingame/LoseScreen"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.682353)
+
+[node name="GameOver" type="Label" parent="Ingame/LoseScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.201
+anchor_top = 0.251
+anchor_right = 0.799
+anchor_bottom = 0.476
+offset_left = -0.552002
+offset_top = -0.248001
+offset_right = 0.552002
+offset_bottom = -0.128006
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 90
+text = "GAME   OVER"
+horizontal_alignment = 1
+
+[node name="Restart" type="Label" parent="Ingame/LoseScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.405
+anchor_top = 0.613
+anchor_right = 0.599
+anchor_bottom = 0.687
+offset_left = -0.560028
+offset_top = -0.22403
+offset_right = -0.0480347
+offset_bottom = -0.176025
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 36
+text = "restart . . . ?"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Ingame/LoseScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.446
+anchor_top = 0.704
+anchor_right = 0.556
+anchor_bottom = 0.843
+offset_left = 0.208008
+offset_top = -0.192047
+offset_right = 0.487915
+offset_bottom = -0.264038
+icon = ExtResource("19_fgp8t")
+flat = true
+expand_icon = true
+
+[node name="WinScreen" type="MarginContainer" parent="Ingame"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Ingame/WinScreen"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.682353)
+
+[node name="GameWon" type="Label" parent="Ingame/WinScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_left = 0.399994
+offset_top = 0.599991
+offset_right = -0.400024
+offset_bottom = -0.0640259
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.577795, 5.77569e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 90
+text = "YOU   WON"
+
+[node name="StartMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="StartMenu/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="StartMenu/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.81
+anchor_right = 0.793
+anchor_bottom = 0.93
+offset_top = -1.12
+offset_right = 2.08002
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("23_kg02x")
+theme_override_colors/font_color = Color(0.839216, 0.529412, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 41
+text = "SETTINGS"
+icon = ExtResource("24_h1d2l")
+flat = true
+expand_icon = true
+
+[node name="StartGameButton" type="Button" parent="StartMenu/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.675
+anchor_right = 0.71
+anchor_bottom = 0.8
+offset_top = -1.12
+offset_right = 2.08002
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("23_kg02x")
+theme_override_colors/font_color = Color(0.839216, 0.529412, 0.145098, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 41
+text = "START"
+icon = ExtResource("24_h1d2l")
+flat = true
+expand_icon = true
+
+[node name="GameName" type="Label" parent="StartMenu/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 1.0
+anchor_bottom = 0.625
+text = "ROGUE
+BEASTS"
+label_settings = SubResource("LabelSettings_mlh78")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_kg02x")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.682353)
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.225
+anchor_right = 0.8
+anchor_bottom = 0.775
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PauseMenu/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("25_cyiib")
+region_rect = Rect2(336.08, 16.2464, 143.276, 143.293)
+patch_margin_left = 50
+patch_margin_top = 45
+patch_margin_right = 45
+patch_margin_bottom = 48
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.329
+anchor_right = 0.5
+anchor_bottom = 0.33
+offset_left = -237.0
+offset_top = -48.8345
+offset_right = 237.0
+offset_bottom = 37.3545
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 61
+text = "MAIN   MENU"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/MarginContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_left = -237.0
+offset_top = -48.8345
+offset_right = 237.0
+offset_bottom = 37.3545
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("3_13jw1")
+theme_override_font_sizes/font_size = 61
+text = "RESTART
+"
+
+[node name="Node" type="Node" parent="."]
+
+[node name="HealthLost" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("21_jfmf8")
+volume_db = -12.0
+
+[node name="HealthLost2" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("22_qg17v")
+volume_db = -10.0
+
+[node name="GameOver" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("23_rnq40")
+volume_db = -10.0
+
+[node name="GameWon" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("30_55y32")
+volume_db = -10.0
+
+[node name="Alert" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("26_l1ycf")
+volume_db = -10.0
+
+[node name="Music" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("27_vgkuy")
+volume_db = -15.0
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("28_7t0yn")
+volume_db = -15.0
+
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiButton" to="." method="_on_blue_samurai_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedButton" to="." method="_on_fighter_red_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Button" to="." method="_on_ninja_red_2_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/SpawnWaveButton" to="." method="_on_spawn_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/LastWaveButton" to="." method="_on_last_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/CyclopeWaveButton" to="." method="_on_cyclope_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/MatureSlimeWaveButton" to="." method="_on_mature_slime_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/YoungSnakeWaveButton" to="." method="_on_young_snake_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/ReptileWaveButton" to="." method="_on_reptile_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/BambooWaveButton" to="." method="_on_bamboo_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/DebugLoseGameButton" to="." method="_on_debug_lose_game_button_pressed"]
+[connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/DebugWinGameButton" to="." method="_on_debug_win_game_button_pressed"]
+[connection signal="toggled" from="Ingame/FFButton/NinePatchRect2/FastForwardButton" to="." method="_on_fast_forward_button_toggled"]
+[connection signal="pressed" from="Ingame/LoseScreen/ColorRect/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="StartMenu/MarginContainer/Panel/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/NinePatchRect/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

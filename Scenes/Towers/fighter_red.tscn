@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq0qgq2vqdp5b"]
+
+[ext_resource type="PackedScene" uid="uid://b4sgihagkojrd" path="res://Scenes/Towers/tower.tscn" id="1_innh0"]
+[ext_resource type="Script" path="res://Scenes/Towers/fighter_red.gd" id="2_f5jaq"]
+[ext_resource type="Texture2D" uid="uid://bcrfbh6gvgwom" path="res://Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SpriteSheet.png" id="2_qtasa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_apjl4"]
+radius = 9.01388
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io4o2"]
+radius = 70.0
+
+[node name="FighterRed" groups=["FighterReds", "Towers"] instance=ExtResource("1_innh0")]
+script = ExtResource("2_f5jaq")
+
+[node name="Level1" parent="Levels" index="0"]
+texture = ExtResource("2_qtasa")
+
+[node name="CollisionShape2D" parent="SpaceTaken" index="0"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_apjl4")
+
+[node name="RangeVisuals" parent="." index="2"]
+scale = Vector2(0.875, 0.875)
+
+[node name="CollisionShape2D" parent="AttackRange" index="0"]
+shape = SubResource("CircleShape2D_io4o2")
+
+[node name="Marker2D" type="Marker2D" parent="ProjectileSpawns" index="0"]
+position = Vector2(5, 6)
+
+[node name="Marker2D2" type="Marker2D" parent="ProjectileSpawns" index="1"]
+position = Vector2(-5, 6)

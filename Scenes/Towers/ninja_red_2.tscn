@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyy74gjvr12w6"]
+
+[ext_resource type="PackedScene" uid="uid://b4sgihagkojrd" path="res://Scenes/Towers/tower.tscn" id="1_0wl5c"]
+[ext_resource type="Texture2D" uid="uid://dhbxld2ok2ix1" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SpriteSheet.png" id="2_bqbwf"]
+[ext_resource type="Script" path="res://Scenes/Towers/ninja_red_2.gd" id="2_ncjyh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7tm21"]
+radius = 9.01388
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a84ed"]
+radius = 60.0
+
+[node name="NinjaRed2" groups=["NinjaRed2s"] instance=ExtResource("1_0wl5c")]
+script = ExtResource("2_ncjyh")
+
+[node name="Level1" parent="Levels" index="0"]
+texture = ExtResource("2_bqbwf")
+
+[node name="CollisionShape2D" parent="SpaceTaken" index="0"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_7tm21")
+
+[node name="RangeVisuals" parent="." index="2"]
+scale = Vector2(0.75, 0.75)
+
+[node name="AttackRange" parent="." index="3"]
+show_behind_parent = true
+
+[node name="CollisionShape2D" parent="AttackRange" index="0"]
+shape = SubResource("CircleShape2D_a84ed")
+
+[node name="Marker2D" type="Marker2D" parent="ProjectileSpawns" index="0"]
+position = Vector2(5, 6)
+
+[node name="Marker2D2" type="Marker2D" parent="ProjectileSpawns" index="1"]
+position = Vector2(-5, 6)
+
+[node name="AttackTimer" parent="Timers" index="0"]
+wait_time = 1.4

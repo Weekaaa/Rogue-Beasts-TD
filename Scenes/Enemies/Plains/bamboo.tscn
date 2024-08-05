@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://bel84b85ife14"]
+
+[ext_resource type="PackedScene" uid="uid://10716wuilshq" path="res://Scenes/Enemies/enemy.tscn" id="1_xnftl"]
+[ext_resource type="Shader" path="res://Scenes/Enemies/hit.gdshader" id="2_1jcw5"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Plains/bamboo.gd" id="2_ndhb1"]
+[ext_resource type="Texture2D" uid="uid://r4ak4ysab2uf" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Bamboo/SpriteSheet.png" id="2_rrv48"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thab4"]
+resource_local_to_scene = true
+shader = ExtResource("2_1jcw5")
+shader_parameter/color = Color(0.419608, 0.784314, 0.054902, 1)
+shader_parameter/progress = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mayau"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_gglc7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wftsu"]
+resource_name = "RunDown"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_qx8re"]
+resource_name = "RunLeft"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 2), Vector2i(2, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_xtv56"]
+resource_name = "RunRight"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, 2), Vector2i(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_tls3t"]
+resource_name = "RunUp"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 2), Vector2i(1, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqu4s"]
+_data = {
+"RESET": SubResource("Animation_gglc7"),
+"RunDown": SubResource("Animation_wftsu"),
+"RunLeft": SubResource("Animation_qx8re"),
+"RunRight": SubResource("Animation_xtv56"),
+"RunUp": SubResource("Animation_tls3t")
+}
+
+[node name="Bamboo" instance=ExtResource("1_xnftl")]
+script = ExtResource("2_ndhb1")
+
+[node name="Image" parent="." index="0"]
+material = SubResource("ShaderMaterial_thab4")
+texture = ExtResource("2_rrv48")
+
+[node name="CollisionShape2D" parent="CharacterBody2D" index="0"]
+shape = SubResource("CapsuleShape2D_mayau")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_nqu4s")
+}

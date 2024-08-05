@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu75ekhrbi6c6"]
+
+[ext_resource type="Texture2D" uid="uid://tkh7txttb8tq" path="res://Ninja Adventure - Asset Pack/Items/Treasure/Coin2.png" id="1_gpl5k"]
+
+[sub_resource type="Animation" id="Animation_s1bo3"]
+resource_name = "rotate"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.45, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iffuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kibu"]
+_data = {
+"RESET": SubResource("Animation_iffuu"),
+"rotate": SubResource("Animation_s1bo3")
+}
+
+[node name="Coin" type="Sprite2D"]
+texture = ExtResource("1_gpl5k")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8kibu")
+}
+autoplay = "rotate"

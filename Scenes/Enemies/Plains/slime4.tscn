@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://dq6w43wljbakn"]
+
+[ext_resource type="PackedScene" uid="uid://10716wuilshq" path="res://Scenes/Enemies/enemy.tscn" id="1_uluyy"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Plains/slime4.gd" id="2_bcesd"]
+[ext_resource type="Texture2D" uid="uid://c2av82055far7" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Slime4/Slime4.png" id="3_d01j0"]
+[ext_resource type="Shader" path="res://Scenes/Enemies/hit.gdshader" id="3_gfvhe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2jnu"]
+resource_local_to_scene = true
+shader = ExtResource("3_gfvhe")
+shader_parameter/color = Color(0, 0.639216, 0.0901961, 1)
+shader_parameter/progress = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32uuv"]
+radius = 9.0
+
+[sub_resource type="Animation" id="Animation_8mtu8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q10ic"]
+resource_name = "RunDown"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_84ofr"]
+resource_name = "RunLeft"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 2), Vector2i(2, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_5u6f5"]
+resource_name = "RunRight"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, 2), Vector2i(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_co352"]
+resource_name = "RunUp"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 2), Vector2i(1, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kylp"]
+_data = {
+"RESET": SubResource("Animation_8mtu8"),
+"RunDown": SubResource("Animation_q10ic"),
+"RunLeft": SubResource("Animation_84ofr"),
+"RunRight": SubResource("Animation_5u6f5"),
+"RunUp": SubResource("Animation_co352")
+}
+
+[node name="Slime4" instance=ExtResource("1_uluyy")]
+script = ExtResource("2_bcesd")
+
+[node name="Image" parent="." index="0"]
+material = SubResource("ShaderMaterial_d2jnu")
+texture = ExtResource("3_d01j0")
+
+[node name="CollisionShape2D" parent="CharacterBody2D" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_32uuv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_5kylp")
+}

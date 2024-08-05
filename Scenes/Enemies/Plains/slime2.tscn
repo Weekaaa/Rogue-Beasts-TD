@@ -1,0 +1,164 @@
+[gd_scene load_steps=16 format=3 uid="uid://bj07eabx36tu7"]
+
+[ext_resource type="PackedScene" uid="uid://10716wuilshq" path="res://Scenes/Enemies/enemy.tscn" id="1_2lm8n"]
+[ext_resource type="Texture2D" uid="uid://clyp0ep7jnecs" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Slime2/Slime2.png" id="2_dqgil"]
+[ext_resource type="Script" path="res://Scenes/Enemies/Plains/slime2.gd" id="2_geqgw"]
+[ext_resource type="Shader" path="res://Scenes/Enemies/hit.gdshader" id="3_w6hr5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dn1ba"]
+resource_local_to_scene = true
+shader = ExtResource("3_w6hr5")
+shader_parameter/color = Color(0.419554, 0.770385, 0.192331, 1)
+shader_parameter/progress = 0.0
+
+[sub_resource type="Curve" id="Curve_g2h6c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.395604), -1.96232, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_aoorl"]
+curve = SubResource("Curve_g2h6c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fip7o"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 2, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 15.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, -14, 0)
+damping_min = 8.0
+damping_max = 15.0
+scale_min = 1.5
+scale_max = 3.5
+color = Color(0.772549, 0.862745, 0.388235, 0.807843)
+alpha_curve = SubResource("CurveTexture_aoorl")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp3tb"]
+radius = 9.0
+
+[sub_resource type="Animation" id="Animation_0qxcg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Image:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bc2sw"]
+resource_name = "RunDown"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(0, 1), Vector2i(0, 2), Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_0iya2"]
+resource_name = "RunLeft"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(2, 1), Vector2i(2, 2), Vector2i(2, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_g4dg1"]
+resource_name = "RunRight"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 0), Vector2i(3, 1), Vector2i(3, 2), Vector2i(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_ykver"]
+resource_name = "RunUp"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 2), Vector2i(1, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d1r8e"]
+_data = {
+"RESET": SubResource("Animation_0qxcg"),
+"RunDown": SubResource("Animation_bc2sw"),
+"RunLeft": SubResource("Animation_0iya2"),
+"RunRight": SubResource("Animation_g4dg1"),
+"RunUp": SubResource("Animation_ykver")
+}
+
+[node name="Slime2" instance=ExtResource("1_2lm8n")]
+script = ExtResource("2_geqgw")
+progress_speed = 0.54
+
+[node name="Image" parent="." index="0"]
+material = SubResource("ShaderMaterial_dn1ba")
+texture = ExtResource("2_dqgil")
+
+[node name="Particles" parent="." index="1"]
+process_material = SubResource("ParticleProcessMaterial_fip7o")
+
+[node name="CollisionShape2D" parent="CharacterBody2D" index="0"]
+position = Vector2(0, 1.68)
+shape = SubResource("CircleShape2D_dp3tb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_d1r8e")
+}

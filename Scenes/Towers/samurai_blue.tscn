@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgurwucbnrb7x"]
+
+[ext_resource type="PackedScene" uid="uid://b4sgihagkojrd" path="res://Scenes/Towers/tower.tscn" id="1_nt43i"]
+[ext_resource type="Script" path="res://Scenes/Towers/samurai_blue.gd" id="2_a17km"]
+[ext_resource type="Texture2D" uid="uid://83gge4j1vm0g" path="res://Ninja Adventure - Asset Pack/Actor/Characters/SamuraiBlue/SpriteSheet.png" id="2_w8qg8"]
+[ext_resource type="PackedScene" uid="uid://bewdalyn6vivj" path="res://Scenes/UI/tower_stats.tscn" id="4_u08uy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcmtj"]
+radius = 9.01388
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lutcl"]
+radius = 80.0
+
+[node name="SamuraiBlue" groups=["SamuraiBlues", "Towers"] instance=ExtResource("1_nt43i")]
+script = ExtResource("2_a17km")
+
+[node name="Level1" parent="Levels" index="0"]
+texture = ExtResource("2_w8qg8")
+
+[node name="CollisionShape2D" parent="SpaceTaken" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_lcmtj")
+
+[node name="AttackRange" parent="." index="3"]
+show_behind_parent = true
+
+[node name="CollisionShape2D" parent="AttackRange" index="0"]
+shape = SubResource("CircleShape2D_lutcl")
+
+[node name="Shuriken" type="Marker2D" parent="ProjectileSpawns" index="0"]
+position = Vector2(0, 6)
+
+[node name="Tower Stats" parent="." index="5" instance=ExtResource("4_u08uy")]
+visible = false
+
+[node name="AttackTimer" parent="Timers" index="0"]
+wait_time = 2.0
+
+[node name="DebugTimer" parent="Timers" index="1"]
+wait_time = 2.0
+autostart = true

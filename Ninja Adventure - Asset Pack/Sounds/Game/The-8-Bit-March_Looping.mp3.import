@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx1543qwyfnhu"
+path="res://.godot/imported/The-8-Bit-March_Looping.mp3-259d9c1e6bd2dabefc3f5c25f88348ed.mp3str"
+
+[deps]
+
+source_file="res://Ninja Adventure - Asset Pack/Sounds/Game/The-8-Bit-March_Looping.mp3"
+dest_files=["res://.godot/imported/The-8-Bit-March_Looping.mp3-259d9c1e6bd2dabefc3f5c25f88348ed.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

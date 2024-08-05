@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkimrry3guee3"]
+
+[ext_resource type="Texture2D" uid="uid://cux5rq17iaokq" path="res://Ninja Adventure - Asset Pack/Ui/Arrow.png" id="1_dweew"]
+
+[node name="FastForward" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.827451)
+rotation = -1.5708
+texture = ExtResource("1_dweew")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(-2.62268e-07, 6)
+texture = ExtResource("1_dweew")

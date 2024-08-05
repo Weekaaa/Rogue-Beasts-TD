@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct47kwuh0uprv"
+path="res://.godot/imported/Sneaky-Cat_Looping.mp3-2b89a628209d5e7264ff40d9242b75ea.mp3str"
+
+[deps]
+
+source_file="res://Ninja Adventure - Asset Pack/Sounds/Game/Sneaky-Cat_Looping.mp3"
+dest_files=["res://.godot/imported/Sneaky-Cat_Looping.mp3-2b89a628209d5e7264ff40d9242b75ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

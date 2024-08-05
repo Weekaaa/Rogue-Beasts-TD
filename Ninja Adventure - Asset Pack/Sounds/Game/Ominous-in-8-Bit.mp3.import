@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wtj5hsd3s7sa"
+path="res://.godot/imported/Ominous-in-8-Bit.mp3-f66b129d27e139b370c8f74072606131.mp3str"
+
+[deps]
+
+source_file="res://Ninja Adventure - Asset Pack/Sounds/Game/Ominous-in-8-Bit.mp3"
+dest_files=["res://.godot/imported/Ominous-in-8-Bit.mp3-f66b129d27e139b370c8f74072606131.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

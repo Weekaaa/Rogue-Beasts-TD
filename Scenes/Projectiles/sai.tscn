@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3dcnb15ajj2n"]
+
+[ext_resource type="Texture2D" uid="uid://cwbwollu3jcl5" path="res://Ninja Adventure - Asset Pack/Items/Weapons/Sai/Sprite.png" id="1_bekxi"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/sai.gd" id="1_fl0xi"]
+[ext_resource type="AudioStream" uid="uid://dgkv8a4amnbdu" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Sword2.wav" id="3_2khpm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olr7l"]
+radius = 4.0
+height = 14.0
+
+[node name="Sai" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_fl0xi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bekxi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_olr7l")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2khpm")
+volume_db = -20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

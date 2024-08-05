@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxjkaleiptp3d"]
+
+[ext_resource type="Texture2D" uid="uid://yjsnqmptrbfc" path="res://Ninja Adventure - Asset Pack/FX/Projectile/Kunai.png" id="1_n10fj"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/kunai.gd" id="1_t0qlw"]
+[ext_resource type="AudioStream" uid="uid://dgkv8a4amnbdu" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Sword2.wav" id="3_ou6rc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7kgl4"]
+radius = 3.0
+height = 16.0
+
+[node name="Kunai" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_t0qlw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("1_n10fj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7kgl4")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ou6rc")
+volume_db = -20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

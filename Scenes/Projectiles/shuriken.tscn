@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://vx2e73gk3atm"]
+
+[ext_resource type="Texture2D" uid="uid://cvog25ff3rebg" path="res://Ninja Adventure - Asset Pack/FX/Projectile/Shuriken.png" id="1_bqd4r"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/shuriken.gd" id="1_yubpd"]
+[ext_resource type="AudioStream" uid="uid://cd8ylfnndror6" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Hit.wav" id="3_lsmxc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hlee1"]
+radius = 6.5
+
+[sub_resource type="Animation" id="Animation_mf1vp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_kxws0"]
+resource_name = "airborne"
+length = 0.05
+loop_mode = 1
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mu8wd"]
+_data = {
+"RESET": SubResource("Animation_mf1vp"),
+"airborne": SubResource("Animation_kxws0")
+}
+
+[node name="Shuriken" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_yubpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bqd4r")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hlee1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mu8wd")
+}
+autoplay = "airborne"
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lsmxc")
+volume_db = -20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciep5mks4ycxk"
+path="res://.godot/imported/Slapstick.mp3-a0084ba9ed882bcfb0febc49a00900b8.mp3str"
+
+[deps]
+
+source_file="res://Ninja Adventure - Asset Pack/Sounds/Game/Slapstick.mp3"
+dest_files=["res://.godot/imported/Slapstick.mp3-a0084ba9ed882bcfb0febc49a00900b8.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

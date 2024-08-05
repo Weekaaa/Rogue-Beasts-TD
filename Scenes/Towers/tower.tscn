@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4sgihagkojrd"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/Tower.gd" id="1_2cyly"]
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_2cyly")
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="Level1" type="Sprite2D" parent="Levels"]
+hframes = 4
+vframes = 7
+
+[node name="Level2" type="Sprite2D" parent="Levels"]
+hframes = 4
+vframes = 7
+
+[node name="Level3" type="Sprite2D" parent="Levels"]
+hframes = 4
+vframes = 7
+
+[node name="Level4" type="Sprite2D" parent="Levels"]
+hframes = 4
+vframes = 7
+
+[node name="SpaceTaken" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceTaken"]
+
+[node name="RangeVisuals" type="Polygon2D" parent="."]
+modulate = Color(0, 0.952941, 0.952941, 0.368627)
+show_behind_parent = true
+polygon = PackedVector2Array(0, -80, -21, -77, -40, -69, -57, -56, -69, -40, -77, -20, -80, 0, -77, 21, -69, 40, -56, 57, -40, 69, -21, 77, 0, 80, 21, 77, 40, 69, 57, 56, 69, 40, 77, 21, 80, 0, 77, -21, 69, -40, 56, -57, 40, -69, 21, -77)
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+
+[node name="ProjectileSpawns" type="Node2D" parent="."]
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="DebugTimer" type="Timer" parent="Timers"]
+
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]

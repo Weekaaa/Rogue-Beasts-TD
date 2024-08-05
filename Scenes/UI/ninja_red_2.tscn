@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwyvgkt2atnv7"]
+
+[ext_resource type="Texture2D" uid="uid://fshnjy77dugx" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/FacesetBox.png" id="1_np1kn"]
+[ext_resource type="Texture2D" uid="uid://crqinpskodyux" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/Faceset.png" id="2_5r2cb"]
+
+[node name="NinjaRed2" type="Sprite2D"]
+scale = Vector2(1.583, 1.583)
+texture = ExtResource("1_np1kn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5r2cb")
