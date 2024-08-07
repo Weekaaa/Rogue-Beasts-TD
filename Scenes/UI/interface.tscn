@@ -646,31 +646,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.877624, 0.429631, 0.0354591, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
+[node name="BlueSamurai" type="MarginContainer" parent="Ingame/SideBar/MarginContainer/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_right = 0.945
-anchor_bottom = 1.0
+anchor_right = 0.95
+anchor_bottom = 0.25
+offset_left = 0.4
+offset_right = -0.400002
 grow_horizontal = 2
-grow_vertical = 2
+
+[node name="ColorRect7" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai"]
+layout_mode = 2
 color = Color(0.996078, 0.564706, 0.278431, 1)
 
-[node name="BlueSamuraiDetails" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="BlueSamuraiDetails" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.06
-anchor_top = 0.126
-anchor_right = 0.965
-anchor_bottom = 0.249
-offset_left = 0.0510063
-offset_top = 1.352
-offset_right = -0.596313
-offset_bottom = -0.352005
+anchor_left = 0.07
+anchor_top = 0.519
+anchor_right = 0.93
+anchor_bottom = 0.969
+offset_left = -0.74
+offset_top = -1.078
+offset_right = 0.739998
+offset_bottom = 0.0220032
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiDetails"]
+[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7/BlueSamuraiDetails"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.555892, 0.688135, 0.993613, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -678,7 +682,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "               100"
 
-[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiDetails"]
+[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7/BlueSamuraiDetails"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -686,7 +690,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "DMG:   5"
 
-[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiDetails"]
+[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7/BlueSamuraiDetails"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -694,33 +698,50 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "CD:   2.0s"
 
-[node name="GoldCoin" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="GoldCoin" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7"]
 position = Vector2(20.552, 94.816)
 scale = Vector2(2.28571, 2.28571)
 texture = ExtResource("4_01ep1")
 
-[node name="BlueSamuraiButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="BlueSamuraiButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.055
-anchor_top = 0.005
-anchor_right = 0.835
-anchor_bottom = 0.11
-offset_top = 1.0
-offset_right = 7.99999
-offset_bottom = 9.00001
+anchor_left = 0.05
+anchor_top = 0.02
+anchor_right = 0.97
+anchor_bottom = 0.48
+offset_left = -0.0999999
+offset_top = -0.24
+offset_right = 0.459999
+offset_bottom = 0.753998
+grow_horizontal = 2
 
-[node name="BlueSamurai" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2" instance=ExtResource("3_b7n3c")]
-position = Vector2(41.552, 40.816)
+[node name="BlueSamurai" parent="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7/BlueSamuraiButton" instance=ExtResource("3_b7n3c")]
+position = Vector2(37.552, 37.816)
 
-[node name="FighterRedDetails" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="FighterRed" type="MarginContainer" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.264
+anchor_right = 0.95
+anchor_bottom = 0.514
+offset_left = 0.4
+offset_right = -0.400002
+grow_horizontal = 2
+
+[node name="ColorRect7" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed"]
+layout_mode = 2
+color = Color(0.996078, 0.564706, 0.278431, 1)
+
+[node name="FighterRedDetails" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.06
-anchor_top = 0.392
+anchor_top = 0.519
 anchor_right = 0.965
-anchor_bottom = 0.515
+anchor_bottom = 0.969
 offset_left = 0.0510063
 offset_top = 1.352
 offset_right = -0.596313
@@ -728,7 +749,7 @@ offset_bottom = -0.352005
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedDetails"]
+[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7/FighterRedDetails"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.555892, 0.688135, 0.993613, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -736,7 +757,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "               225"
 
-[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedDetails"]
+[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7/FighterRedDetails"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -744,7 +765,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "DMG:   6"
 
-[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedDetails"]
+[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7/FighterRedDetails"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -752,33 +773,49 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "CD:   1.0s"
 
-[node name="GoldCoin2" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
-position = Vector2(20.552, 267.121)
+[node name="GoldCoin2" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7"]
+position = Vector2(20, 94.928)
 scale = Vector2(2.28571, 2.28571)
 texture = ExtResource("4_01ep1")
 
-[node name="FighterRedButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="FighterRedButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.057
-anchor_top = 0.273
-anchor_right = 0.964
-anchor_bottom = 0.375
-offset_left = -0.471283
-offset_right = 0.42408
-offset_bottom = 8.0
+anchor_left = 0.05
+anchor_top = 0.02
+anchor_right = 0.97
+anchor_bottom = 0.48
+offset_left = -0.0999999
+offset_top = -0.22
+offset_right = 0.459999
+offset_bottom = 1.72
 
-[node name="FighterRed" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2" instance=ExtResource("5_fqupo")]
-position = Vector2(41.552, 214)
+[node name="FighterRed" parent="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7/FighterRedButton" instance=ExtResource("5_fqupo")]
+position = Vector2(38, 37.928)
 
-[node name="NinjaRed2Details" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="RedNinja" type="MarginContainer" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.527
+anchor_right = 0.95
+anchor_bottom = 0.776
+offset_left = 0.4
+offset_right = -0.400002
+grow_horizontal = 2
+
+[node name="ColorRect7" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja"]
+layout_mode = 2
+color = Color(0.996078, 0.564706, 0.278431, 1)
+
+[node name="NinjaRed2Details" type="VBoxContainer" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.06
-anchor_top = 0.655
+anchor_top = 0.519
 anchor_right = 0.965
-anchor_bottom = 0.778
+anchor_bottom = 0.969
 offset_left = 0.0510063
 offset_top = 1.35201
 offset_right = -0.596313
@@ -786,7 +823,7 @@ offset_bottom = -0.35202
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Details"]
+[node name="Cost" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7/NinjaRed2Details"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.555892, 0.688135, 0.993613, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -794,7 +831,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "               175"
 
-[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Details"]
+[node name="Damage" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7/NinjaRed2Details"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -802,7 +839,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "DMG:   7"
 
-[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Details"]
+[node name="AtkCD" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7/NinjaRed2Details"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -810,37 +847,52 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 16
 text = "CD:   1.4s"
 
-[node name="GoldCoin3" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
-position = Vector2(20.552, 438.121)
+[node name="GoldCoin3" type="Sprite2D" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7"]
+position = Vector2(20, 94.504)
 scale = Vector2(2.28571, 2.28571)
 texture = ExtResource("4_01ep1")
 
-[node name="NinjaRed2Button" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="NinjaRed2Button" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_top = 0.535
-anchor_right = 0.96
-anchor_bottom = 0.65
+anchor_top = 0.02
+anchor_right = 0.97
+anchor_bottom = 0.48
 offset_left = -0.124162
 offset_right = 0.403687
 offset_bottom = 0.880001
 
-[node name="NinjaRed2" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2" instance=ExtResource("6_bohsj")]
-position = Vector2(41.552, 385)
+[node name="NinjaRed2" parent="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7/NinjaRed2Button" instance=ExtResource("6_bohsj")]
+position = Vector2(37.5592, 38.32)
 
-[node name="Round" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="Rounds" type="MarginContainer" parent="Ingame/SideBar/MarginContainer/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_top = 0.791
+anchor_top = 0.789
 anchor_right = 0.95
-anchor_bottom = 0.844
-offset_left = -0.124162
-offset_top = -7.16003
-offset_right = -0.35907
-offset_bottom = 0.640015
+anchor_bottom = 0.877
+offset_left = 0.4
+offset_top = 0.728027
+offset_right = -0.400002
+offset_bottom = 0.704041
+
+[node name="ColorRect7" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel/Rounds"]
+layout_mode = 2
+color = Color(0.996078, 0.564706, 0.278431, 1)
+
+[node name="Round" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/Rounds/ColorRect7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.459
+offset_left = -0.0999999
+offset_top = -0.182
+offset_right = 0.0999985
+offset_bottom = -1.148
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
@@ -851,18 +903,18 @@ text = "ROUND"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RoundNumber" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="RoundNumber" type="Label" parent="Ingame/SideBar/MarginContainer/Panel/Rounds/ColorRect7"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
-anchor_top = 0.839
+anchor_top = 0.435
 anchor_right = 0.946
-anchor_bottom = 0.878
-offset_left = -0.124162
-offset_top = -7.54401
-offset_right = -0.0291367
-offset_bottom = 0.255981
+anchor_bottom = 0.918
+offset_left = -0.0999999
+offset_top = 0.205
+offset_right = 0.428001
+offset_bottom = -0.0460014
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.556863, 0.686275, 0.992157, 1)
@@ -873,12 +925,29 @@ text = "1 /  10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpawnWaveButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/ColorRect2"]
+[node name="WaveButton" type="MarginContainer" parent="Ingame/SideBar/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.893
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_left = 0.4
+offset_top = -0.664001
+offset_right = -0.400002
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect7" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel/WaveButton"]
+layout_mode = 2
+color = Color(0.996078, 0.564706, 0.278431, 1)
+
+[node name="SpawnWaveButton" type="Button" parent="Ingame/SideBar/MarginContainer/Panel/WaveButton/ColorRect7"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.152
-anchor_top = 0.901
+anchor_top = 0.156
 anchor_right = 0.867
 anchor_bottom = 0.991
 offset_left = -0.98545
@@ -892,47 +961,8 @@ icon = ExtResource("7_oo6fk")
 flat = true
 expand_icon = true
 
-[node name="ColorRect3" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.25
-anchor_right = 0.989
-anchor_bottom = 0.261
-offset_right = 0.613437
-offset_bottom = 0.871994
-color = Color(0.878431, 0.431373, 0.0352941, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.514
-anchor_right = 0.989
-anchor_bottom = 0.525
-offset_right = 0.613437
-offset_bottom = 0.871994
-color = Color(0.878431, 0.431373, 0.0352941, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.777
-anchor_right = 0.989
-anchor_bottom = 0.789
-offset_right = 0.613437
-offset_bottom = 0.871994
-color = Color(0.878431, 0.431373, 0.0352941, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="Ingame/SideBar/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.878
-anchor_right = 0.989
-anchor_bottom = 0.89
-offset_right = 0.613437
-offset_bottom = 0.871994
-color = Color(0.878431, 0.431373, 0.0352941, 1)
-
 [node name="DebugButtons" type="Control" parent="Ingame"]
+visible = false
 layout_mode = 1
 anchor_top = 0.2
 anchor_right = 0.14
@@ -1428,10 +1458,10 @@ volume_db = -15.0
 stream = ExtResource("28_7t0yn")
 volume_db = -15.0
 
-[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/BlueSamuraiButton" to="." method="_on_blue_samurai_button_pressed"]
-[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/FighterRedButton" to="." method="_on_fighter_red_button_pressed"]
-[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/NinjaRed2Button" to="." method="_on_ninja_red_2_button_pressed"]
-[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/ColorRect2/SpawnWaveButton" to="." method="_on_spawn_wave_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/BlueSamurai/ColorRect7/BlueSamuraiButton" to="." method="_on_blue_samurai_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/FighterRed/ColorRect7/FighterRedButton" to="." method="_on_fighter_red_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/RedNinja/ColorRect7/NinjaRed2Button" to="." method="_on_ninja_red_2_button_pressed"]
+[connection signal="pressed" from="Ingame/SideBar/MarginContainer/Panel/WaveButton/ColorRect7/SpawnWaveButton" to="." method="_on_spawn_wave_button_pressed"]
 [connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/LastWaveButton" to="." method="_on_last_wave_button_pressed"]
 [connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/CyclopeWaveButton" to="." method="_on_cyclope_wave_button_pressed"]
 [connection signal="pressed" from="Ingame/DebugButtons/MarginContainer/VBoxContainer/MatureSlimeWaveButton" to="." method="_on_mature_slime_wave_button_pressed"]

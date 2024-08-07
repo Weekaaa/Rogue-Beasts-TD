@@ -75,7 +75,7 @@ func play_dialogue():
 		$Node/Alert.play()
 		await display_timed_text(%VillagerWelcome, 5)
 		$Node/Alert.play()
-		await display_timed_text(%VillagerTipOne, 5)
+		await display_timed_text(%VillagerTipOne, 2.5)
 		%Villager.visible = false
 		%DialogueBox.visible = false
 	
@@ -85,7 +85,7 @@ func play_dialogue():
 			%DialogueBox.visible = true
 			%Villager.visible = true
 			$Node/Alert.play()
-			await display_timed_text(%VillagerTipTwo, 3)
+			await display_timed_text(%VillagerTipTwo, 2)
 			%SpawnWaveButton.disabled = false
 			%Villager.visible = false
 			%DialogueBox.visible = false
@@ -267,7 +267,10 @@ func _on_level_game_won(): #recieves signal from the plains script when game is 
 
 
 func reset_game_variables():
-	pass
+	Globals.coins = 150
+	Globals.player_health = 100
+	Globals.current_wave_number = 1
+	Globals.first_tower_placed = false
 
 #========================================================#
 #--------------------BUTTON-SIGNALS----------------------#
@@ -278,9 +281,7 @@ func _on_spawn_wave_button_pressed():
 
 
 func _on_restart_button_pressed():
-	Globals.coins = 150
-	Globals.player_health = 100
-	Globals.current_wave_number = 1
+	reset_game_variables()
 	restart_game.emit()
 
 
@@ -306,9 +307,7 @@ func _on_main_menu_button_pressed():
 	$StartMenu.visible = true
 	restart_game.emit()
 	ingame = false
-	Globals.coins = 150
-	Globals.player_health = 100
-	Globals.current_wave_number = 1
+	reset_game_variables()
 
 
 func _on_blue_samurai_button_pressed():
