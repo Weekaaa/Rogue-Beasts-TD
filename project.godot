@@ -85,6 +85,7 @@ ui_close_window={
 2d_physics/layer_4="Projectiles"
 2d_physics/layer_5="PlaceZones"
 2d_physics/layer_6="SpecialPlaceZones"
+2d_physics/layer_7="T2T"
 
 [rendering]
 

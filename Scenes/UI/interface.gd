@@ -196,7 +196,7 @@ func play_dialogue():
 		%DialogueBox.visible = false
 
 
-func display_timed_text(text: Label, time: int):
+func display_timed_text(text: Label, time: float):
 	text.visible = true
 	var tween = create_tween()
 	tween.tween_property(text, "visible_ratio", 1, 1.2)
@@ -221,6 +221,7 @@ func on_game_over():
 
 func on_game_won():
 	Engine.time_scale = 0
+	$Node/BossMusic.stop()
 	$Node/GameWon.play()
 	%BlueSamuraiButton.disabled = true
 	%FighterRedButton.disabled = true

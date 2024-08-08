@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cy6dlrs6wuu4f"]
+
+[ext_resource type="FontFile" uid="uid://bwyukjrsshdjq" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="1_hjffc"]
+
+[resource]
+font = ExtResource("1_hjffc")
+font_size = 9
+font_color = Color(0.552941, 0.560784, 0.0313726, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)

@@ -31,3 +31,9 @@ func _on_attack_range_body_exited(body):
 
 func _on_attack_timer_timeout(): #attack cooldown
 	can_attack = true
+
+func _on_t2t_range_body_entered(_body):
+	Globals.can_place_tower = false
+
+func _on_t_2t_range_body_exited(_body):
+	Globals.can_place_tower = true

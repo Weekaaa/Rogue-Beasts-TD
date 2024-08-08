@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyy74gjvr12w6"]
+[gd_scene load_steps=7 format=3 uid="uid://dyy74gjvr12w6"]
 
 [ext_resource type="PackedScene" uid="uid://b4sgihagkojrd" path="res://Scenes/Towers/tower.tscn" id="1_0wl5c"]
 [ext_resource type="Texture2D" uid="uid://dhbxld2ok2ix1" path="res://Ninja Adventure - Asset Pack/Actor/Characters/NinjaRed2/SpriteSheet.png" id="2_bqbwf"]
@@ -9,6 +9,10 @@ radius = 9.01388
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a84ed"]
 radius = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqifx"]
+radius = 7.0
+height = 20.0
 
 [node name="NinjaRed2" groups=["NinjaRed2s"] instance=ExtResource("1_0wl5c")]
 script = ExtResource("2_ncjyh")
@@ -28,6 +32,11 @@ show_behind_parent = true
 
 [node name="CollisionShape2D" parent="AttackRange" index="0"]
 shape = SubResource("CircleShape2D_a84ed")
+
+[node name="CollisionShape2D" parent="T2TRange" index="0"]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dqifx")
 
 [node name="Marker2D" type="Marker2D" parent="ProjectileSpawns" index="0"]
 position = Vector2(5, 6)

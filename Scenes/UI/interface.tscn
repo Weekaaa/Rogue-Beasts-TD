@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bdypoyw3fuftx"]
+[gd_scene load_steps=42 format=3 uid="uid://bdypoyw3fuftx"]
 
 [ext_resource type="Script" path="res://Scenes/UI/interface.gd" id="1_ssmhb"]
 [ext_resource type="Texture2D" uid="uid://chau3qxnmkks2" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/DialogBoxFaceset.png" id="2_suw1y"]
@@ -8,16 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://bv4w6qswru8wj" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Villager/Faceset.png" id="3_ohrwt"]
 [ext_resource type="Texture2D" uid="uid://b4aapa1808ci0" path="res://Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="4_01ep1"]
 [ext_resource type="Texture2D" uid="uid://drm20foqjrber" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Slime4/Faceset.png" id="5_0p2r1"]
+[ext_resource type="LabelSettings" uid="uid://pij7xy4jpwme" path="res://Scenes/UI/bimotext.tres" id="5_5sogh"]
 [ext_resource type="PackedScene" uid="uid://pnx4ji377wyv" path="res://Scenes/UI/fighter_red.tscn" id="5_fqupo"]
 [ext_resource type="Texture2D" uid="uid://cqsd6mjae2maw" path="res://Ninja Adventure - Asset Pack/Ui/MenuBackground.png" id="5_mkp0q"]
 [ext_resource type="PackedScene" uid="uid://bu75ekhrbi6c6" path="res://Scenes/Objects/coin.tscn" id="5_uev24"]
 [ext_resource type="PackedScene" uid="uid://cwyvgkt2atnv7" path="res://Scenes/UI/ninja_red_2.tscn" id="6_bohsj"]
 [ext_resource type="Texture2D" uid="uid://dpmulwwd0iyaw" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Cyclope2/Faceset.png" id="6_fpc12"]
+[ext_resource type="LabelSettings" uid="uid://cy6dlrs6wuu4f" path="res://Scenes/UI/enemytext.tres" id="7_gggog"]
 [ext_resource type="Texture2D" uid="uid://cux5rq17iaokq" path="res://Ninja Adventure - Asset Pack/Ui/Arrow.png" id="7_oo6fk"]
 [ext_resource type="Texture2D" uid="uid://dl4xxlfbtqgon" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Snake2/Faceset.png" id="7_tfm16"]
 [ext_resource type="Texture2D" uid="uid://t8okw2kqoti2" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Reptile2/Faceset.png" id="8_ye6o6"]
 [ext_resource type="Texture2D" uid="uid://bftls1dxsco17" path="res://Ninja Adventure - Asset Pack/Actor/Monsters/Bamboo/Faceset.png" id="9_4q7u1"]
 [ext_resource type="Texture2D" uid="uid://b6uxg6vslqlqb" path="res://Ninja Adventure - Asset Pack/Actor/Boss/DemonCyclop2/Faceset.png" id="10_by0kl"]
+[ext_resource type="LabelSettings" uid="uid://brd26tc3rvvxh" path="res://Scenes/UI/queentext.tres" id="14_te1ck"]
 [ext_resource type="Texture2D" uid="uid://b4etnlriry1je" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/YesButton.png" id="19_fgp8t"]
 [ext_resource type="Texture2D" uid="uid://b7thwrvxxayoj" path="res://Ninja Adventure - Asset Pack/Ui/Theme/nine_path_2.png" id="20_cx73a"]
 [ext_resource type="Texture2D" uid="uid://bga6xdch212qr" path="res://Ninja Adventure - Asset Pack/Ui/LifeReceptacle/heart.png" id="20_s5fsw"]
@@ -57,6 +60,13 @@ font_color = Color(0.840569, 0.528411, 0.144981, 1)
 outline_size = 45
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(1, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqy48"]
+font = ExtResource("3_13jw1")
+font_size = 25
+font_color = Color(0.839216, 0.529412, 0.145098, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_ssmhb")
@@ -124,6 +134,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Hey    you!   Beasts   have   started   invading   our
 town...   you   need   to   help   defend   it . . . !"
+label_settings = ExtResource("5_5sogh")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -139,6 +150,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Start   by   placing   a   samurai   over   here !"
+label_settings = ExtResource("5_5sogh")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -154,6 +166,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Now   press   the   arrow   to   start    when   ready."
+label_settings = ExtResource("5_5sogh")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -170,6 +183,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Beasts   differ   a   lot   from   eachother ,   try
 using   different   towers   to   deal   with   them."
+label_settings = ExtResource("5_5sogh")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -186,6 +200,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Keep   in   mind   all   of   the   paths   that   the   beasts
 could   come   from   and   plan   accordingly . . ."
+label_settings = ExtResource("5_5sogh")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -201,6 +216,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Oh   no !   They're   attacking   from   the   forest   too!"
+label_settings = ExtResource("5_5sogh")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -214,6 +230,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "bimo"
+label_settings = ExtResource("5_5sogh")
 horizontal_alignment = 1
 
 [node name="Slime" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -243,6 +260,7 @@ theme_override_font_sizes/font_size = 9
 text = "Health :     10
 Speed :     12
 "
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -258,6 +276,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "It's   all   wobbly...   looks   edible."
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -271,6 +290,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "slime"
+label_settings = ExtResource("7_gggog")
 horizontal_alignment = 1
 
 [node name="MaturedSlime" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -300,6 +320,7 @@ theme_override_font_sizes/font_size = 9
 text = "Health :     20
 Speed :     14
 "
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -315,6 +336,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "This   one   looks   more   angry..."
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -328,6 +350,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "mature slime"
+label_settings = ExtResource("7_gggog")
 horizontal_alignment = 1
 
 [node name="Cyclope" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -357,6 +380,7 @@ theme_override_font_sizes/font_size = 9
 text = "Health :     20
 Speed :     8
 "
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -372,6 +396,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Their   queen   is   really   dangerous..."
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -385,6 +410,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "cyclope"
+label_settings = ExtResource("7_gggog")
 horizontal_alignment = 1
 
 [node name="YoungSnake" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -414,6 +440,7 @@ theme_override_font_sizes/font_size = 9
 text = "Health :     7
 Speed :     30
 "
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -429,6 +456,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Hsssss   (They're   fast)."
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -442,6 +470,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "young snake"
+label_settings = ExtResource("7_gggog")
 horizontal_alignment = 1
 
 [node name="Reptile" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -471,6 +500,7 @@ theme_override_font_sizes/font_size = 9
 text = "Health :     35
 Speed :     10
 "
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -486,6 +516,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Looks   mutated...   and    dangerous."
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -500,6 +531,7 @@ theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "reptile
 "
+label_settings = ExtResource("7_gggog")
 horizontal_alignment = 1
 
 [node name="Bamboo" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -529,6 +561,7 @@ theme_override_font_sizes/font_size = 9
 text = "Health :     14
 Speed :     11
 "
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -544,6 +577,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 9
 text = "Is   that   walking   living   bamboo   ??"
+label_settings = ExtResource("7_gggog")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -559,6 +593,7 @@ theme_override_font_sizes/font_size = 9
 text = "bamboo
 
 "
+label_settings = ExtResource("7_gggog")
 horizontal_alignment = 1
 
 [node name="CyclopeQueen" type="Node2D" parent="Ingame/EnemyDesc/MarginContainer/DialogueBox"]
@@ -601,6 +636,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_13jw1")
 theme_override_font_sizes/font_size = 18
 text = "THE   CYCLOPE   QUEEN"
+label_settings = ExtResource("14_te1ck")
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -616,6 +652,7 @@ theme_override_font_sizes/font_size = 9
 text = "queen
 
 "
+label_settings = ExtResource("14_te1ck")
 horizontal_alignment = 1
 
 [node name="SideBar" type="Control" parent="Ingame"]
@@ -1293,28 +1330,6 @@ grow_vertical = 2
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="SettingsButton" type="Button" parent="StartMenu/MarginContainer/Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.81
-anchor_right = 0.793
-anchor_bottom = 0.93
-offset_top = -1.12
-offset_right = 2.08002
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("23_kg02x")
-theme_override_colors/font_color = Color(0.839216, 0.529412, 0.145098, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 41
-text = "SETTINGS"
-icon = ExtResource("24_h1d2l")
-flat = true
-expand_icon = true
-
 [node name="StartGameButton" type="Button" parent="StartMenu/MarginContainer/Panel"]
 unique_name_in_owner = true
 layout_mode = 1
@@ -1346,6 +1361,27 @@ anchor_bottom = 0.625
 text = "ROGUE
 BEASTS"
 label_settings = SubResource("LabelSettings_mlh78")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Creator" type="Label" parent="StartMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CREATED    BY:
+ALY   ALWAKEEL"
+label_settings = SubResource("LabelSettings_dqy48")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artist" type="Label" parent="StartMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "ART    BY:
+PIXEL   BOY   and   AAA"
+label_settings = SubResource("LabelSettings_dqy48")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1474,3 +1510,4 @@ volume_db = -15.0
 [connection signal="pressed" from="Ingame/LoseScreen/ColorRect/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="StartMenu/MarginContainer/Panel/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/NinePatchRect/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/NinePatchRect/RestartButton" to="." method="_on_restart_button_pressed"]

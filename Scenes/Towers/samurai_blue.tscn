@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgurwucbnrb7x"]
+[gd_scene load_steps=8 format=3 uid="uid://dgurwucbnrb7x"]
 
 [ext_resource type="PackedScene" uid="uid://b4sgihagkojrd" path="res://Scenes/Towers/tower.tscn" id="1_nt43i"]
 [ext_resource type="Script" path="res://Scenes/Towers/samurai_blue.gd" id="2_a17km"]
@@ -10,6 +10,10 @@ radius = 9.01388
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lutcl"]
 radius = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jkw4"]
+radius = 7.0
+height = 18.0
 
 [node name="SamuraiBlue" groups=["SamuraiBlues", "Towers"] instance=ExtResource("1_nt43i")]
 script = ExtResource("2_a17km")
@@ -27,11 +31,16 @@ show_behind_parent = true
 [node name="CollisionShape2D" parent="AttackRange" index="0"]
 shape = SubResource("CircleShape2D_lutcl")
 
-[node name="Shuriken" type="Marker2D" parent="ProjectileSpawns" index="0"]
-position = Vector2(0, 6)
+[node name="CollisionShape2D" parent="T2TRange" index="0"]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2jkw4")
 
 [node name="Tower Stats" parent="." index="5" instance=ExtResource("4_u08uy")]
 visible = false
+
+[node name="Shuriken" type="Marker2D" parent="ProjectileSpawns" index="0"]
+position = Vector2(0, 6)
 
 [node name="AttackTimer" parent="Timers" index="0"]
 wait_time = 2.0
